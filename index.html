@@ -3,6 +3,7 @@
         <script src="media/js/jquery.js"></script>
         <script type="text/javascript" src="media/js/mao.js"></script>
         <script type="text/javascript" src="media/js/jogador.js"></script>
+        <script type="text/javascript" src="media/js/aneis.js"></script>
         <script type="text/javascript" src="media/js/jonkenpo.js"></script>
         <script type="text/javascript">
             var jogador_1 = new Jogador();
@@ -23,7 +24,11 @@
                     $("#debug-console").html("<p>" + jogador_1.mao.forma_atual + " x " + jogador_2.mao.forma_atual + "</p>");
                    var vencedor = verificar_vitoria(jogador_1, jogador_2);
                    if (vencedor == 1){
-                       alert(jogador_1.mao.pegar_dano_infligido(jogador_2.mao)); 
+                       jQuery.each(jogador_1.aneis_equipados(), function(indice, anel){
+                           jogador_1.usar_anel(anel); 
+                       });
+                       alert(jogador_1.mao.pegar_dano_infligido(jogador_2.mao) + jogador_1.bonus_ataque);
+                       
                    } else if (vencedor == -1){
                        alert(jogador_2.mao.pegar_dano_infligido(jogador_1.mao));
                    }
@@ -40,6 +45,10 @@
                     }
                    
                 });
+                $("#anel-da-forca-do-metal").bind("click", function(evento){
+                    jogador_1.aneis.push(new AnelDaForcaDoMetal());
+                   
+                });
             });
         </script>
     </head>
@@ -50,5 +59,6 @@
         <input class="tipo_mao" type="radio" id="papel" name="tipo_mao" value="2" /> Papel
         <input class="tipo_mao" type="radio" id="tesoura" name="tipo_mao" value="3" /> Tesoura
         <input type="button" id="jogar" value="Jogar" />
+        <input type="checkbox" id="anel-da-forca-do-metal" /> Anel da Força do Metal
     </body>
 </html>

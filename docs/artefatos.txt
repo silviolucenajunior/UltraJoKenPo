@@ -1,0 +1,39 @@
+Mãos
+   As mãos são divididas uma mão Normal e três tipos elementas, Normal, Mão de Metal, Mão de Madeira e Mão de Terra. Cada mão elemental provoca maior dado com a figura que lhe corresponde e sofre penalidade quando recebe dano de uma mão elemental.
+
+Aneis
+
+   Aneis adicionam bonus ao ataque ou reduzem o dano sofrido pelo ataque do inimigo.
+   
+Pulseiras
+   As pulseiras proporcionam status temporarios ao personagem ou ao inimigo
+   
+Obelisco
+   Obeliscos proporcionam status ao personagem ou ao inimigo, estes so são neutralizados quando o obelisco é distruido.
+   
+Item
+    Items são usados e seu efeito so perdura durante o turno no qual foi usado. 
+    
+    
+=================================== Aneis ===============================================================================
+
+Aneis elementais ofensivos
+
+    Anel da Força do Metal
+    Anel da Força da Madeira
+    Anel da Força da Terra      
+    
+    Anel da Furia do Metal
+    Anel da Furia da Madeira
+    Anel da Furia da Terra      
+    
+    Anel da Frenesi do Metal
+    Anel da Frenesi da Madeira
+    Anel da Frenesi da Terra
+    
+Aneis Elementais Defensivos
+    
+    Anel da Resistencia do Metal
+    Anel da Resistencia da Madeira
+    Anel da Resistencia da Terra
+    
