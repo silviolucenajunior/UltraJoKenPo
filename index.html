@@ -1,10 +1,54 @@
 <html>
     <head>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script type="text/javascript" src="media/js/ultrajokenpo.js"></script>
+        <script src="media/js/jquery.js"></script>
+        <script type="text/javascript" src="media/js/mao.js"></script>
+        <script type="text/javascript" src="media/js/jogador.js"></script>
+        <script type="text/javascript" src="media/js/jonkenpo.js"></script>
+        <script type="text/javascript">
+            var jogador_1 = new Jogador();
+            var jogador_2 = new Jogador();
+            jogador_1.mao = new Mao();
+            jogador_2.mao = new MaoDeMetal();
+            
+            jQuery(document).ready(function(){
+                $("#jogar").bind("click", function(){
+                    var valor = Math.floor( 1 + Math.random() * 3);
+                    if (valor == 1) {
+                        jogador_2.mao.pedra();
+                    } else if (valor == 2){
+                        jogador_2.mao.papel();
+                    } else {
+                        jogador_2.mao.tesoura();
+                    }
+                    $("#debug-console").html("<p>" + jogador_1.mao.forma_atual + " x " + jogador_2.mao.forma_atual + "</p>");
+                   var vencedor = verificar_vitoria(jogador_1, jogador_2);
+                   if (vencedor == 1){
+                       alert(jogador_1.mao.pegar_dano_infligido(jogador_2.mao)); 
+                   } else if (vencedor == -1){
+                       alert(jogador_2.mao.pegar_dano_infligido(jogador_1.mao));
+                   }
+                });
+                
+                $(".tipo_mao").bind("click", function(evento){
+                    var valor = $(this).val();
+                    if (valor == 1) {
+                        jogador_1.mao.pedra();
+                    } else if (valor == 2){
+                        jogador_1.mao.papel();
+                    } else {
+                        jogador_1.mao.tesoura();
+                    }
+                   
+                });
+            });
+        </script>
     </head>
     <body>
         <div class="debug" id="debug-console">
         </div>
+        <input class="tipo_mao" type="radio" id="pedra" name="tipo_mao" value="1" /> Pedra
+        <input class="tipo_mao" type="radio" id="papel" name="tipo_mao" value="2" /> Papel
+        <input class="tipo_mao" type="radio" id="tesoura" name="tipo_mao" value="3" /> Tesoura
+        <input type="button" id="jogar" value="Jogar" />
     </body>
 </html>
