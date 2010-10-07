@@ -24,13 +24,21 @@
                     $("#debug-console").html("<p>" + jogador_1.mao.forma_atual + " x " + jogador_2.mao.forma_atual + "</p>");
                    var vencedor = verificar_vitoria(jogador_1, jogador_2);
                    if (vencedor == 1){
-                       jQuery.each(jogador_1.aneis_equipados(), function(indice, anel){
+                       jQuery.each(jogador_1.aneis_equipados, function(indice, anel){
                            jogador_1.usar_anel(anel); 
                        });
-                       alert(jogador_1.mao.pegar_dano_infligido(jogador_2.mao) + jogador_1.bonus_ataque);
+                       var dano = jogador_1.mao.pegar_dano_infligido(jogador_2.mao) + jogador_1.bonus_ataque;
+                       jogador_2.pontos_de_vida -= dano;
+                       alert("O Jogador 2 possui " + jogador_2.pontos_de_vida + " pontos de vida");
+                       jogador_1.bonus_ataque = 0;
                        
                    } else if (vencedor == -1){
-                       alert(jogador_2.mao.pegar_dano_infligido(jogador_1.mao));
+                       jQuery.each(jogador_2.aneis_equipados, function(indice, anel){
+                           jogador_2.usar_anel(anel); 
+                       });
+                       var dano = jogador_2.mao.pegar_dano_infligido(jogador_1.mao) + jogador_2.bonus_ataque;
+                       jogador_1.pontos_de_vida -= dano;
+                       alert("O Jogador 1 possui " + jogador_1.pontos_de_vida + " pontos de vida");
                    }
                 });
                 
@@ -46,7 +54,7 @@
                    
                 });
                 $("#anel-da-forca-do-metal").bind("click", function(evento){
-                    jogador_1.aneis.push(new AnelDaForcaDoMetal());
+                    jogador_1.aneis_equipados.push(new AnelDaForcaDoMetal());
                    
                 });
             });
