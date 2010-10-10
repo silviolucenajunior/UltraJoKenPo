@@ -4,6 +4,7 @@ function Jogador(){
     this.nome = "";
     this.mao = null;
     this.bonus_ataque = 0;
+    this.bonus_defesa = 0;
     this.aneis = [];
     this.aneis_equipados = [];
     

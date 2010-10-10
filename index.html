@@ -25,20 +25,37 @@
                    var vencedor = verificar_vitoria(jogador_1, jogador_2);
                    if (vencedor == 1){
                        jQuery.each(jogador_1.aneis_equipados, function(indice, anel){
-                           jogador_1.usar_anel(anel); 
+                            var anel_equipado = jogador_1.aneis_equipados[indice];
+                            if (anel_equipado.tipo == OFENSIVO){
+                                jogador_1.usar_anel(anel);
+                            }   
                        });
                        var dano = jogador_1.mao.pegar_dano_infligido(jogador_2.mao) + jogador_1.bonus_ataque;
                        jogador_2.pontos_de_vida -= dano;
                        alert("O Jogador 2 possui " + jogador_2.pontos_de_vida + " pontos de vida");
                        jogador_1.bonus_ataque = 0;
+                       jogador_1.bonus_defesa = 0;
                        
                    } else if (vencedor == -1){
                        jQuery.each(jogador_2.aneis_equipados, function(indice, anel){
                            jogador_2.usar_anel(anel); 
                        });
+                       jQuery.each(jogador_1.aneis_equipados, function(indice, anel){
+                            var anel_equipado = jogador_1.aneis_equipados[indice];
+                            if (anel_equipado.tipo == DEFENSIVO){
+                                jogador_1.usar_anel(anel);
+                            }   
+                       });
                        var dano = jogador_2.mao.pegar_dano_infligido(jogador_1.mao) + jogador_2.bonus_ataque;
-                       jogador_1.pontos_de_vida -= dano;
+                       jogador_1.pontos_de_vida -= dano - jogador_1.bonus_defesa;
                        alert("O Jogador 1 possui " + jogador_1.pontos_de_vida + " pontos de vida");
+                       jogador_1.bonus_defesa = 0;
+                   }
+                   if (jogador_1.pontos_de_vida <= 0 ){
+                        alert("Seus pontos de vida se acabaram. Você perdeu!");
+                   } else if (jogador_1.pontos_de_vida <= 0){
+                        alert("Você venceu. Parabens!");
+                    
                    }
                 });
                 
@@ -57,6 +74,10 @@
                     jogador_1.aneis_equipados.push(new AnelDaForcaDoMetal());
                    
                 });
+                $("#anel-da-defesa-do-metal").bind("click", function(evento){
+                    jogador_1.aneis_equipados.push(new AnelDaDefesaDoMetal());
+                   
+                });
             });
         </script>
     </head>
@@ -68,5 +89,6 @@
         <input class="tipo_mao" type="radio" id="tesoura" name="tipo_mao" value="3" /> Tesoura
         <input type="button" id="jogar" value="Jogar" />
         <input type="checkbox" id="anel-da-forca-do-metal" /> Anel da Força do Metal
+        <input type="checkbox" id="anel-da-defesa-do-metal" /> Anel da Defesa do Metal
     </body>
 </html>
