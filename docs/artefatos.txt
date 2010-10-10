@@ -1,39 +1,33 @@
 Mãos
-   As mãos são divididas uma mão Normal e três tipos elementas, Normal, Mão de Metal, Mão de Madeira e Mão de Terra. Cada mão elemental provoca maior dado com a figura que lhe corresponde e sofre penalidade quando recebe dano de uma mão elemental.
+   As mãos são divididas uma mão Normal e três tipos elementais, Normal, Mão de Metal, Mão de Madeira e Mão de Terra. Cada mão elemental provoca maior dado com a figura que lhe corresponde e sofre penalidade quando recebe dano de uma mão elemental.
 
 Aneis
 
    Aneis adicionam bonus ao ataque ou reduzem o dano sofrido pelo ataque do inimigo.
    
-Pulseiras
-   As pulseiras proporcionam status temporarios ao personagem ou ao inimigo
+Braceletes
+   Braceletes são itens elementais, que enquanto equipados podem provocar dano ao jogador ou ao oponente dependendo da forma da mão que o jogador utilizou.
    
 Obelisco
-   Obeliscos proporcionam status ao personagem ou ao inimigo, estes so são neutralizados quando o obelisco é distruido.
+   Obeliscos proporcionam status ou bonus de ataque/defesa ao personagem ou ao inimigo, estes so são neutralizados quando o obelisco é distruido.
    
 Item
     Items são usados e seu efeito so perdura durante o turno no qual foi usado. 
     
     
-=================================== Aneis ===============================================================================
+=================================== Exemplos ===============================================================================
 
-Aneis elementais ofensivos
+Aneis
+    O Jogador esta equipado com um Anel da Força do Metal, este adiciona 1 de dano ao ataque quando o jogador usa a forma de mão Tesoura. Todo anel possui uma quantidade de carga e a cada vez que o jogador usa o anel desta quantidade é subtraido o valor 1 e quando as cargas chegam a zero o anel é destruido. Um anel estando equipado ele é usado automaticamente quando o jogador vence uma rodada usando a forma da mão que condiz com o anel. Ex Uma carga foi subtraida do Anel da Força do Metal quando o jogador venceu usando a forma Tesoura.
+    
+Braceletes
+    O Jogador esta equipado com o BraceleteDoFogo, este por sua vez adiciona reduz um ponto de vida do inimigo quando o jogador usa a forma Tesoura e reduz um ponto de vida do jogador quando este usa a forma Papel.
+    
+Obeliscos
+    O jogador colocu no campo o Obelisco Dos Herois de Outrora e isto adiciona 1 de dano a todas suas jogadas de ataque enquanto o efeito do obelisco estiver ativado. O poder do obelisco so é neutralizado quando o oponente conseguir destrui-lo.
+    
+    
+=========================================================================================================================
 
-    Anel da Força do Metal
-    Anel da Força da Madeira
-    Anel da Força da Terra      
-    
-    Anel da Furia do Metal
-    Anel da Furia da Madeira
-    Anel da Furia da Terra      
-    
-    Anel da Frenesi do Metal
-    Anel da Frenesi da Madeira
-    Anel da Frenesi da Terra
-    
-Aneis Elementais Defensivos
-    
-    Anel da Resistencia do Metal
-    Anel da Resistencia da Madeira
-    Anel da Resistencia da Terra
-    
+As diferenças entre Aneis e Braceletes.
+    Aneis possuem carga e sempre adicionam um valor ao dano ou a defesa do jogador, entretanto o dano não é nescessariamente o valor que será aferá os pontos de vida do adversario. Alem do mais pelo fato de possuirem cargas os aneis são destruidos quando estas acabam. Um Bracelete afeta diretamente os pontos de vida do adversario ignorando seus bonus de defesa, entretanto também afetam os pontos de vida do jogador caso este use uma forma de mão que possui fraqueza contra os bracelete.            
