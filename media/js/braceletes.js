@@ -6,6 +6,7 @@ function BraceleteFogo(){
     Bracelete.apply(this);
     
     this.calcular_bonus = function(jogador, oponente){
+        alert("Bracelete usado");
         switch (jogador.mao.forma_atual){
             case TESOURA:
                 oponente.pontos_de_vida -= 1;

@@ -15,6 +15,7 @@ function Obelisco(){
 function ObeliscoDosHeroisDeOutrora(){
     Obelisco.apply(this);
     this.ativar_efeito = function(jogador, oponente){
+        alert("Obelisco ativado");
         jogador.bonus_base_ataque += 1;
     };
     
